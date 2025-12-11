@@ -106,7 +106,6 @@ fillUp();
 
 // display fill up history + average
 const avgCost = displayCostToFillUp();
-console.log("Average cost to fill up: $" + avgCost);
 
 console.log("\nUpdated Car Stats:\n" + carStats());
 
