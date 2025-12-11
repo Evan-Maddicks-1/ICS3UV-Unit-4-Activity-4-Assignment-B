@@ -21,10 +21,10 @@ function oilChange(mileage: number, oilChangeKM: number): boolean {
 let odometer: number = 65000;       // mileage of Car
 let oilChangeKM: number = 65000;    // value since the last oil change
 let carColor: string = "Blue";      // color of Car
-let carModel: string = "Corolla";   // model of Car
-let carMake: string = "Toyota";     // new variable for car make
-let newMileage: number = 0.0;       // new mileage amount
-let gasCost: number[] = new Array(10); // cost of gas per fill up
+const carModel: string = "Corolla";   // model of Car
+const carMake: string = "Toyota";     // new variable for car make
+const newMileage: number = 0.0;       // new mileage amount
+const gasCost: number[] = new Array(10); // cost of gas per fill up
 let fillUps: number = 0;            // how many fill-ups were recorded
 
 // Functions
@@ -38,13 +38,13 @@ function carStats(): string {
 }
 
 function wrapCar(): string {
-  let colour = prompt("Enter a colour to wrap your car: ") || "Unknown";
+  const colour = prompt("Enter a colour to wrap your car: ") || "Unknown";
   return colour;
 }
 
 function drive(): number {
   // random number between 100 and 1000
-  let distance = Math.floor(Math.random() * 901) + 100;
+  const distance = Math.floor(Math.random() * 901) + 100;
 
   // update odometer
   odometer = odometer + distance;
@@ -53,8 +53,8 @@ function drive(): number {
 }
 
 function fillUp(): void {
-  let costInput = prompt("Enter gas fill-up cost: ") || "0";
-  let cost = parseFloat(costInput);
+  const costInput = prompt("Enter gas fill-up cost: ") || "0";
+  const cost = parseFloat(costInput);
 
   if (fillUps < gasCost.length) {
     gasCost[fillUps] = cost;
@@ -71,7 +71,7 @@ function displayCostToFillUp(): number {
     total = total + gasCost[i];
   }
 
-  let average = total / fillUps;
+  const average = total / fillUps;
   console.log("Average fill-up cost: $" + average);
 
   return average;
@@ -88,12 +88,12 @@ console.log("Initial Car Stats:\n" + carStats());
 carColor = wrapCar();
 
 // drive the car
-let kmDriven = drive();
+const kmDriven = drive();
 console.log("You drove " + kmDriven + " km.");
 console.log("New odometer reading: " + odometer);
 
 // check for oil change
-let needsChange = oilChange(odometer, oilChangeKM);
+const needsChange = oilChange(odometer, oilChangeKM);
 
 if (needsChange == true) {
   oilChangeKM = odometer;
@@ -105,7 +105,7 @@ if (needsChange == true) {
 fillUp();
 
 // display fill up history + average
-let avgCost = displayCostToFillUp();
+const avgCost = displayCostToFillUp();
 console.log("Average cost to fill up: $" + avgCost);
 
 console.log("\nUpdated Car Stats:\n" + carStats());
