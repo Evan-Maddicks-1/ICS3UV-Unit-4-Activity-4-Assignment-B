@@ -1,14 +1,11 @@
 /**
 * @author Evan Maddicks
-* @version 1.0.0
+* @version 1.0.1
 * @date 2025-12-11
 * @fileoverview This program keeps track of car stats
 */
 
 function oilChange(mileage: number, oilChangeKM: number): boolean {
-  // This function will check to see if your car needs an oil change
-  // and return the necessary responses, as well as update the variables.
-
   if (mileage - oilChangeKM >= 5000) {
     console.log("An oil change was done.");
     return true;
@@ -21,9 +18,8 @@ function oilChange(mileage: number, oilChangeKM: number): boolean {
 let odometer: number = 65000;       // mileage of Car
 let oilChangeKM: number = 65000;    // value since the last oil change
 let carColor: string = "Blue";      // color of Car
-const carModel: string = "Corolla";   // model of Car
-const carMake: string = "Toyota";     // new variable for car make
-const newMileage: number = odometer;        // new mileage amount
+const carModel: string = "Corolla"; // model of Car
+const carMake: string = "Toyota";   // make of Car
 const gasCost: number[] = new Array(10); // cost of gas per fill up
 let fillUps: number = 0;            // how many fill-ups were recorded
 
@@ -43,12 +39,8 @@ function wrapCar(): string {
 }
 
 function drive(): number {
-  // random number between 100 and 1000
   const distance = Math.floor(Math.random() * 901) + 100;
-
-  // update odometer
   odometer = odometer + distance;
-
   return distance;
 }
 
@@ -62,7 +54,7 @@ function fillUp(): void {
   }
 }
 
-function displayCostToFillUp(): number {
+function costToFillUp(): number {
   let total = 0;
 
   console.log("\nGas Fill-Up Costs:");
@@ -76,7 +68,6 @@ function displayCostToFillUp(): number {
 
   return average;
 }
-
 
 // set first fill up cost
 gasCost[0] = 74.00;
@@ -105,8 +96,8 @@ if (needsChange == true) {
 fillUp();
 
 // display fill up history + average
-const avgCost = displayCostToFillUp();
+const avgCost = costToFillUp();
+console.log("The average cost of your fill-ups is: $" + avgCost.toFixed(2));
 
 console.log("\nUpdated Car Stats:\n" + carStats());
-
 console.log("\nDone.");
