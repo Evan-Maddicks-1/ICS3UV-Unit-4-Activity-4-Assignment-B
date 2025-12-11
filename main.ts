@@ -23,7 +23,7 @@ let oilChangeKM: number = 65000;    // value since the last oil change
 let carColor: string = "Blue";      // color of Car
 const carModel: string = "Corolla";   // model of Car
 const carMake: string = "Toyota";     // new variable for car make
-let newMileage: number = 0.0;       // new mileage amount
+const newMileage: number = odometer;        // new mileage amount
 const gasCost: number[] = new Array(10); // cost of gas per fill up
 let fillUps: number = 0;            // how many fill-ups were recorded
 
