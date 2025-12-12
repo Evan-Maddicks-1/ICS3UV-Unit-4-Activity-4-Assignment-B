@@ -1,9 +1,9 @@
 /**
-* @author Evan Maddicks
-* @version 1.0.0
-* @date 2025-12-11
-* @fileoverview This program keeps track of car stats
-*/
+ * @author Evan Maddicks
+ * @version 1.0.0
+ * @date 2025-12-11
+ * @fileoverview This program keeps track of car stats
+ */
 
 package main
 
@@ -21,7 +21,7 @@ func oilChange(mileage int, lastOilChange int) bool {
 	return false
 }
 
-// Global variables (simple for beginners)
+// Variables
 var odometer int = 65000
 var oilChangeKM int = 65000
 var carColor string = "Blue"
